@@ -34,8 +34,8 @@
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.LblPassword = new System.Windows.Forms.Label();
             this.BtnRegister = new System.Windows.Forms.Button();
+            this.LblPassword = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,7 @@
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -117,21 +118,9 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(207, 94);
             this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // LblPassword
-            // 
-            this.LblPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LblPassword.AutoSize = true;
-            this.LblPassword.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPassword.ForeColor = System.Drawing.Color.Blue;
-            this.LblPassword.Location = new System.Drawing.Point(257, 115);
-            this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(122, 31);
-            this.LblPassword.TabIndex = 1;
-            this.LblPassword.Text = "Password";
             // 
             // BtnRegister
             // 
@@ -147,6 +136,18 @@
             this.BtnRegister.Text = "Register";
             this.BtnRegister.UseVisualStyleBackColor = false;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
+            // 
+            // LblPassword
+            // 
+            this.LblPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LblPassword.AutoSize = true;
+            this.LblPassword.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPassword.ForeColor = System.Drawing.Color.Blue;
+            this.LblPassword.Location = new System.Drawing.Point(257, 115);
+            this.LblPassword.Name = "LblPassword";
+            this.LblPassword.Size = new System.Drawing.Size(122, 31);
+            this.LblPassword.TabIndex = 1;
+            this.LblPassword.Text = "Password";
             // 
             // FomLogin
             // 

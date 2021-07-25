@@ -23,18 +23,22 @@ namespace WindowsFormsApp3
         {
 
         }
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Instancia.Hide();
+            FomPantallaPrincipal.Instancia.Show();
+        }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            //Instancia.Hide();
+            Instancia.Hide();
             FomRegister.Instancia.Show();
         }
 
+        
         private void button3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        
+        }        
     }
 }

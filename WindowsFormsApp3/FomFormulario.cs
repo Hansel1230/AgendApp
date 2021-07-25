@@ -10,29 +10,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3
 {
-    public partial class FomRegister : Form
+    public partial class FomFormulario : Form
     {
-        public static FomRegister Instancia { get; } = new FomRegister();
+        public static FomFormulario Instancia { get; } = new FomFormulario();
 
-        public FomRegister()
+        public FomFormulario()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void FomFormulario_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void TxtRegister_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Instancia.Hide();
             FomPantallaPrincipal.Instancia.Show();
-        }
-
-        private void FomRegister_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

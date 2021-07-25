@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FomFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FomFormulario.Designer.cs">
+      <DependentUpon>FomFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FomPantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FomPantallaPrincipal.Designer.cs">
+      <DependentUpon>FomPantallaPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FomRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FomFormulario.resx">
+      <DependentUpon>FomFormulario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FomLogin.resx">
       <DependentUpon>FomLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FomPantallaPrincipal.resx">
+      <DependentUpon>FomPantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FomRegister.resx">
       <DependentUpon>FomRegister.cs</DependentUpon>
