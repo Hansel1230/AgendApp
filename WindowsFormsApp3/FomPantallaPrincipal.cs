@@ -18,18 +18,42 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-
-        private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FomPantallaPrincipal_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show("hola","Saludo");
             Instancia.Hide();
-            FomLogin.Instancia.Show();
         }
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
+        private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            Instancia.Hide();
+            FomLogin.Instancia.Fulltxt();
+            FomLogin.Instancia.Show();
+            
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             Instancia.Hide();
             FomFormulario.Instancia.Show();
         }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+           // Instancia.Hide();
+            //FomFormulario.Instancia.Show();
+        }
+
+        private void DgvContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        /*public void LoadData()
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = FomFormulario.Instancia.contact.GetAll();
+            btn
+        }
+        */
     }
 }

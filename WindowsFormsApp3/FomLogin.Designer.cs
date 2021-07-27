@@ -43,9 +43,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.73333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.26666F));
             this.tableLayoutPanel1.Controls.Add(this.LblUserName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.TxtUserName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxtPassword, 1, 3);
@@ -56,14 +56,15 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.7931F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.39394F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.37374F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.14141F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.47475F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.73737F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(639, 415);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6679F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(749, 452);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // LblUserName
             // 
@@ -71,7 +72,7 @@
             this.LblUserName.AutoSize = true;
             this.LblUserName.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUserName.ForeColor = System.Drawing.Color.Blue;
-            this.LblUserName.Location = new System.Drawing.Point(254, 0);
+            this.LblUserName.Location = new System.Drawing.Point(300, 0);
             this.LblUserName.Name = "LblUserName";
             this.LblUserName.Size = new System.Drawing.Size(129, 31);
             this.LblUserName.TabIndex = 0;
@@ -80,18 +81,23 @@
             // TxtUserName
             // 
             this.TxtUserName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtUserName.Location = new System.Drawing.Point(215, 59);
+            this.TxtUserName.Location = new System.Drawing.Point(182, 86);
             this.TxtUserName.Name = "TxtUserName";
-            this.TxtUserName.Size = new System.Drawing.Size(207, 20);
+            this.TxtUserName.Size = new System.Drawing.Size(366, 20);
             this.TxtUserName.TabIndex = 2;
+            this.TxtUserName.Click += new System.EventHandler(this.TxtUserName_Click);
+            this.TxtUserName.Leave += new System.EventHandler(this.TxtUserName_Leave);
             // 
             // TxtPassword
             // 
             this.TxtPassword.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtPassword.Location = new System.Drawing.Point(215, 168);
+            this.TxtPassword.Location = new System.Drawing.Point(182, 248);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(207, 20);
+            this.TxtPassword.Size = new System.Drawing.Size(366, 20);
             this.TxtPassword.TabIndex = 3;
+            this.TxtPassword.Click += new System.EventHandler(this.TxtPassword_Click);
+            this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+            this.TxtPassword.Leave += new System.EventHandler(this.TxtPassword_Leave);
             // 
             // BtnLogin
             // 
@@ -100,9 +106,9 @@
             this.BtnLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnLogin.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnLogin.Location = new System.Drawing.Point(215, 226);
+            this.BtnLogin.Location = new System.Drawing.Point(182, 310);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(207, 52);
+            this.BtnLogin.Size = new System.Drawing.Size(366, 70);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = false;
@@ -114,24 +120,25 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.BtnRegister, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(215, 318);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(182, 383);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(207, 94);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(366, 227);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // BtnRegister
             // 
+            this.BtnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnRegister.AutoSize = true;
             this.BtnRegister.BackColor = System.Drawing.Color.Aqua;
-            this.BtnRegister.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnRegister.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtnRegister.Location = new System.Drawing.Point(3, 3);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(201, 44);
+            this.BtnRegister.Size = new System.Drawing.Size(360, 66);
             this.BtnRegister.TabIndex = 9;
             this.BtnRegister.Text = "Register";
             this.BtnRegister.UseVisualStyleBackColor = false;
@@ -143,7 +150,7 @@
             this.LblPassword.AutoSize = true;
             this.LblPassword.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPassword.ForeColor = System.Drawing.Color.Blue;
-            this.LblPassword.Location = new System.Drawing.Point(257, 115);
+            this.LblPassword.Location = new System.Drawing.Point(304, 170);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(122, 31);
             this.LblPassword.TabIndex = 1;
@@ -153,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 415);
+            this.ClientSize = new System.Drawing.Size(749, 452);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FomLogin";
             this.Text = "Login";

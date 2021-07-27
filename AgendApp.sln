@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1525
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendAppInterface", "WindowsFormsApp3\AgendAppInterface.csproj", "{43C8B040-4925-4B5A-8FB3-5CF80A31295D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{E4828E96-9BDF-443D-8AF7-517566671C74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{43C8B040-4925-4B5A-8FB3-5CF80A31295D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C8B040-4925-4B5A-8FB3-5CF80A31295D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43C8B040-4925-4B5A-8FB3-5CF80A31295D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4828E96-9BDF-443D-8AF7-517566671C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4828E96-9BDF-443D-8AF7-517566671C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4828E96-9BDF-443D-8AF7-517566671C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4828E96-9BDF-443D-8AF7-517566671C74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
