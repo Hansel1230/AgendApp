@@ -12,13 +12,18 @@ namespace WindowsFormsApp3
 {
     public partial class FomRegister : Form
     {
+        #region Instancia
         public static FomRegister Instancia { get; } = new FomRegister();
+        #endregion
+
         public bool isvalid = true;
 
         public FomRegister()
         {
             InitializeComponent();
         }
+
+        #region Events/Mantenimiento Txt
         private void FomRegister_Load(object sender, EventArgs e)
         {
             fullTxt();
@@ -83,28 +88,34 @@ namespace WindowsFormsApp3
                 TxtPassword.Text = "Enter Password";
             }
         }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+        #endregion
+
+        #region Validacion BtnRegister
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             isvalid = true;
             if (string.IsNullOrEmpty(TxtName.Text) || (TxtName.Text == "Enter Name"))
             {
-                MessageBox.Show("Enter Name please!! ", "Advertence");
+                MessageBox.Show("Enter Name please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtLastName.Text) || (TxtLastName.Text == "Enter LastName"))
             {
-                MessageBox.Show("Enter LastName please!! ", "Advertence");
+                MessageBox.Show("Enter LastName please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtUserName.Text) || (TxtUserName.Text == "Enter UserName"))
             {
-                MessageBox.Show("Enter UserName please!! ", "Advertence");
+                MessageBox.Show("Enter UserName please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtPassword.Text) || (TxtPassword.Text == "Enter Password"))
             {
-                MessageBox.Show("Enter Password please!! ", "Advertence");
+                MessageBox.Show("Enter Password please!! ", "Warning");
                 isvalid = false;
             }
             if (isvalid)
@@ -114,12 +125,9 @@ namespace WindowsFormsApp3
                 FomPantallaPrincipal.Instancia.Show();
                 ClearTxt();
             }
+            #endregion
         }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+     
         #region Methods
 
         public void fullTxt()
@@ -135,8 +143,7 @@ namespace WindowsFormsApp3
             TxtLastName.Clear();
             TxtUserName.Clear();
             TxtPassword.Clear();
-        }
-        
+        }       
         #endregion 
 
     }

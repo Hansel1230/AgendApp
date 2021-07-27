@@ -14,7 +14,9 @@ namespace WindowsFormsApp3
 {
     public sealed partial class FomLogin : Form
     {
+        #region Instancia
         public static FomLogin Instancia { get; } = new FomLogin();
+        #endregion
 
         public bool isvalid = true;
 
@@ -23,7 +25,8 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        #region Events
+        #region Events/Mantenimiento Txt
+
         private void FomLogin_Load(object sender, EventArgs e)
         {
             Fulltxt();
@@ -56,36 +59,14 @@ namespace WindowsFormsApp3
                 TxtPassword.Text = "Enter Password";
             }
         }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            isvalid = true;
-            if (string.IsNullOrEmpty(TxtUserName.Text) || (TxtUserName.Text == "Enter UserName"))
-            {
-                MessageBox.Show("Enter UserName please!! ", "Advertence");
-                isvalid = false;
-            }
-            else if (string.IsNullOrEmpty(TxtPassword.Text) || (TxtPassword.Text == "Enter Password"))
-            {
-                MessageBox.Show("Enter Password please!! ", "Advertence");
-                isvalid = false;
-            }
-            if (isvalid)
-            {
-                FomPantallaPrincipal.Instancia.Show();
-                Instancia.Hide();
-                Fulltxt(); 
-            }
-        }
-
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             Instancia.Hide();
-            FomRegister.Instancia.Show();          
+            FomRegister.Instancia.Show();
             FomRegister.Instancia.fullTxt();
             Fulltxt();
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -98,7 +79,30 @@ namespace WindowsFormsApp3
         {
 
         }
-        #endregion 
+        #endregion
+
+        #region Validacion BtnLogin
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            isvalid = true;
+            if (string.IsNullOrEmpty(TxtUserName.Text) || (TxtUserName.Text == "Enter UserName"))
+            {
+                MessageBox.Show("Enter UserName please!! ", "Advertence");
+                isvalid = false;
+            }
+            else if (string.IsNullOrEmpty(TxtPassword.Text) || (TxtPassword.Text == "Enter Password"))
+            {
+                MessageBox.Show("Enter Password please!! ", "Warning");
+                isvalid = false;
+            }
+            if (isvalid)
+            {
+                FomPantallaPrincipal.Instancia.Show();
+                Instancia.Hide();
+                Fulltxt(); 
+            }
+        }
+        #endregion
 
         #region Methods
         public void Fulltxt()

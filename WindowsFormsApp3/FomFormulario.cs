@@ -13,14 +13,17 @@ namespace WindowsFormsApp3
 {
     public partial class FomFormulario : Form
     {
-        //Instancia de clase
+        public int? oldIndex { get; set; } = null;
+
+        #region Instancia de clase
         public static FomFormulario Instancia { get; } = new FomFormulario();
 
         //Objeto de ContactService
         private ContactService contactService;
-
+        #endregion
 
         public bool isvalid = true;
+
         //Carga del formulario
         public FomFormulario()
         {
@@ -28,11 +31,13 @@ namespace WindowsFormsApp3
             contactService = new ContactService();
         }
 
-        #region Events
         private void FomFormulario_Load(object sender, EventArgs e)
         {
             fullTxt();
+            FomPantallaPrincipal.Instancia.LoadData();
         }
+
+        #region Events/Mantenimiento Txt
         private void TxtName_Click(object sender, EventArgs e)
         {
             if (TxtName.Text == "Enter Name")
@@ -106,13 +111,15 @@ namespace WindowsFormsApp3
         private void LblPersonalphone_Click(object sender, EventArgs e)
         {
 
-        }
+        } 
+        #endregion
+        #region Validacion BtnAdd
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             isvalid = true;
             if (string.IsNullOrEmpty(TxtName.Text) || (TxtName.Text == "Enter Name"))
             {
-                MessageBox.Show("Enter Name please!! ", "Advertence");
+                MessageBox.Show("Enter Name please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtLastName.Text) || (TxtLastName.Text == "Enter LastName"))
@@ -122,19 +129,21 @@ namespace WindowsFormsApp3
             }
             else if (string.IsNullOrEmpty(TxtAddress.Text) || (TxtAddress.Text == "Enter Address"))
             {
-                MessageBox.Show("Enter Address please!! ", "Advertence");
+                MessageBox.Show("Enter Address please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtPersonalPhone.Text) || (TxtPersonalPhone.Text == "Enter Personal Phone"))
             {
-                MessageBox.Show("Enter Personal Phone please!! ", "Advertence");
+                MessageBox.Show("Enter Personal Phone please!! ", "Warning");
                 isvalid = false;
             }
             else if (string.IsNullOrEmpty(TxtWorkPhone.Text) || (TxtWorkPhone.Text == "Enter Work Phone"))
             {
-                MessageBox.Show("Enter WorkPhone please!! ", "Advertence");
+                MessageBox.Show("Enter WorkPhone please!! ", "Warning");
                 isvalid = false;
             }
+            
+            
             if (isvalid)
             {
                 AddContact();
@@ -142,7 +151,6 @@ namespace WindowsFormsApp3
                 FomPantallaPrincipal.Instancia.Show();
                 fullTxt();
             }
-
             #endregion
         }
 
@@ -165,25 +173,48 @@ namespace WindowsFormsApp3
         }
         public void AddContact()
         {
-            Contact contact = new Contact();
+            Contact contact;
+
+            if (oldIndex != null)
+            {
+                contact = contactService.Getitem((int)oldIndex);
+                oldIndex = null;
+
+            }
+            else
+            {
+                contact = new Contact();
+                contactService.add(contact);
+            }              
             contact.Name = TxtName.Text;
             contact.LastName = TxtLastName.Text;
             contact.Address = TxtAddress.Text;
             contact.PersonalPhone = TxtPersonalPhone.Text;
             contact.WorkPhone = TxtWorkPhone.Text;
-
-            contactService.add(contact);
-            MessageBox.Show("Success","Notification");
+           
+            MessageBox.Show("Success", "Notification");
+            FomPantallaPrincipal.Instancia.LoadData();
         }
-
-        /*public void LoadData()
+        public void EditContact(int index)
         {
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = contactService.GetAll();
-            btn
+            Contact contact = contactService.Getitem(index);
+            TxtName.Text = contact.Name;
+            TxtLastName.Text = contact.LastName;
+            TxtAddress.Text = contact.Address;
+            TxtPersonalPhone.Text = contact.PersonalPhone;
+            TxtWorkPhone.Text = contact.WorkPhone;
+            oldIndex = index;
         }
-        */
+        public void FullProp(int? index)
+        {
+            Contact contact = new Contact();
+            contact = ContactService.Instancia.Getitem(index.Value);
+            TxtName.Text = contact.Name;
+            TxtLastName.Text = contact.LastName;
+            TxtAddress.Text = contact.Address;
+            TxtPersonalPhone.Text = contact.PersonalPhone;
+            TxtWorkPhone.Text = contact.WorkPhone;            
+        }
         #endregion
-
     }
 }

@@ -8,6 +8,7 @@ namespace BusinessLayer
 {
     public class ContactService
     {
+        public static ContactService Instancia { get; } = new ContactService();
         public void add(Contact item)
         {
             ContactRepository.Instancia.contacts.Add(item);

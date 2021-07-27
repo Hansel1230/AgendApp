@@ -36,7 +36,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDeselect = new System.Windows.Forms.Button();
             this.DgvContacts = new System.Windows.Forms.DataGridView();
@@ -133,7 +133,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.btnDelete, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BtnDelete, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnEdit, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnDeselect, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,18 +143,20 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(559, 49);
             this.tableLayoutPanel4.TabIndex = 3;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // btnDelete
+            // BtnDelete
             // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDelete.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(189, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 41);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Visible = false;
+            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnDelete.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Location = new System.Drawing.Point(189, 3);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(180, 41);
+            this.BtnDelete.TabIndex = 2;
+            this.BtnDelete.Text = "Delete";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Visible = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnEdit
             // 
@@ -180,15 +182,22 @@
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = true;
             this.BtnDeselect.Visible = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // DgvContacts
             // 
+            this.DgvContacts.AllowUserToAddRows = false;
+            this.DgvContacts.AllowUserToDeleteRows = false;
             this.DgvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvContacts.Location = new System.Drawing.Point(286, 96);
+            this.DgvContacts.MultiSelect = false;
             this.DgvContacts.Name = "DgvContacts";
+            this.DgvContacts.ReadOnly = true;
+            this.DgvContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvContacts.Size = new System.Drawing.Size(559, 432);
             this.DgvContacts.TabIndex = 4;
+            this.DgvContacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContacts_CellClick);
             this.DgvContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContacts_CellContentClick);
             // 
             // FomPantallaPrincipal
@@ -225,6 +234,6 @@
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnDeselect;
         private System.Windows.Forms.DataGridView DgvContacts;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button BtnDelete;
     }
 }
