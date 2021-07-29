@@ -10,7 +10,7 @@ namespace BusinessLayer
     {
         public static ContactRepository Instancia { get; } = new ContactRepository();
 
-        public List<Contact> contacts { get; set; } = new List<Contact>();
+        public List<Contact> Contacts { get; set; } = new List<Contact>();
 
         private ContactRepository()
         {

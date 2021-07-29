@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,7 @@ namespace WindowsFormsApp3
             }
         }
         private void BtnRegister_Click(object sender, EventArgs e)
-        {
+        {            
             Instancia.Hide();
             FomRegister.Instancia.Show();
             FomRegister.Instancia.fullTxt();

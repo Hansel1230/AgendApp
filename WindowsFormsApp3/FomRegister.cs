@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace WindowsFormsApp3
         private void FomRegister_Load(object sender, EventArgs e)
         {
             fullTxt();
+            TxtName.Focus();
             
         }
         private void TxtName_Click(object sender, EventArgs e)
@@ -120,6 +122,19 @@ namespace WindowsFormsApp3
             }
             if (isvalid)
             {
+                /*string direccion = TxtUserName.Text;
+                string fullDireccion = direccion + "/" + "pass.txt";
+                // Register here
+                if (!Directory.Exists(direccion))
+                {
+                    Directory.CreateDirectory(direccion);
+                    File.Create(fullDireccion);
+                    StreamWriter sw = new StreamWriter(fullDireccion);
+                    sw.WriteLine(TxtPassword.Text);
+                    sw.Close();
+                    File.SetAttributes(fullDireccion, FileAttributes.Hidden);
+                }*/
+
                 MessageBox.Show("Success", "Notification");
                 Instancia.Hide();
                 FomPantallaPrincipal.Instancia.Show();
@@ -143,8 +158,12 @@ namespace WindowsFormsApp3
             TxtLastName.Clear();
             TxtUserName.Clear();
             TxtPassword.Clear();
-        }       
-        #endregion 
+        }
+        #endregion
 
+        private void FomRegister_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }

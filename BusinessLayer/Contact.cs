@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
+    [Serializable]
     public class Contact
     {
         public string Name { get; set; }

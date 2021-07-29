@@ -178,19 +178,24 @@ namespace WindowsFormsApp3
             if (oldIndex != null)
             {
                 contact = contactService.Getitem((int)oldIndex);
+                contact.Name = TxtName.Text;
+                contact.LastName = TxtLastName.Text;
+                contact.Address = TxtAddress.Text;
+                contact.PersonalPhone = TxtPersonalPhone.Text;
+                contact.WorkPhone = TxtWorkPhone.Text;
+                contactService.Edit((int)oldIndex, contact);
                 oldIndex = null;
-
             }
             else
             {
                 contact = new Contact();
+                contact.Name = TxtName.Text;
+                contact.LastName = TxtLastName.Text;
+                contact.Address = TxtAddress.Text;
+                contact.PersonalPhone = TxtPersonalPhone.Text;
+                contact.WorkPhone = TxtWorkPhone.Text;
                 contactService.add(contact);
             }              
-            contact.Name = TxtName.Text;
-            contact.LastName = TxtLastName.Text;
-            contact.Address = TxtAddress.Text;
-            contact.PersonalPhone = TxtPersonalPhone.Text;
-            contact.WorkPhone = TxtWorkPhone.Text;
            
             MessageBox.Show("Success", "Notification");
             FomPantallaPrincipal.Instancia.LoadData();
@@ -216,5 +221,10 @@ namespace WindowsFormsApp3
             TxtWorkPhone.Text = contact.WorkPhone;            
         }
         #endregion
+
+        private void FomFormulario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }

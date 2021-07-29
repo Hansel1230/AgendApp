@@ -29,7 +29,8 @@ namespace WindowsFormsApp3
 
         #region Events
         private void FomPantallaPrincipal_Load(object sender, EventArgs e)
-        {           
+        {
+            LoadData();
         }
         private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {           
@@ -93,6 +94,7 @@ namespace WindowsFormsApp3
         #region Methods
         public void LoadData()
         {
+
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = ContactService.Instancia.GetAll();
             DgvContacts.DataSource = bindingSource;
@@ -128,6 +130,11 @@ namespace WindowsFormsApp3
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FomPantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

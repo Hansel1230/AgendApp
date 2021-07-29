@@ -206,9 +206,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 586);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FomPantallaPrincipal";
             this.Text = "FomPantallaPrincipal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FomPantallaPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FomPantallaPrincipal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -44,6 +44,7 @@
     <Compile Include="Contact.cs" />
     <Compile Include="ContactRepository.cs" />
     <Compile Include="ContactService.cs" />
+    <Compile Include="DataPersistence\Serializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
